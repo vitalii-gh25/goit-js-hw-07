@@ -35,14 +35,21 @@ gallery.insertAdjacentHTML("beforeend", markup);
 
 gallery.style.display = "flex";
 gallery.style.flexWrap = "wrap";
-gallery.style.gap = "10px";
+gallery.style.gap = "48px 24px";
 gallery.style.listStyle = "none";
-gallery.style.padding = "0";
+gallery.style.padding = "";
+gallery.style.margin = "100px 156px";
 
-const imgs = gallery.querySelectorAll("img");
+const imgs = gallery.querySelectorAll("li img");
 
 imgs.forEach((img) => {
   img.style.width = "100%";
-  img.style.height = "auto";
+  img.style.height = "300px";
   img.style.display = "block";
+  img.style.objectFit = "cover";
+});
+
+const items = gallery.querySelectorAll("li");
+items.forEach((li) => {
+  li.style.flex = "1 1 calc((100% - 72px) / 3)";
 });
